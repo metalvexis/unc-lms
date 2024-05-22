@@ -1,0 +1,33 @@
+services:
+  mysqldb:
+    image: mysql:lts
+    restart: always
+    networks:
+      - appnetwork
+    volumes:
+      - dbdata:/var/lib/mysql
+    env_file:
+      - ./server/.env.docker
+    ports:
+      - "3307:3306"
+  backend:
+    depends_on:
+      mysqldb:
+        condition: service_started
+        restart: true
+    networks:
+      - appnetwork
+    build: .
+    entrypoint: ./wait-for-it.sh mysqldb:3306 -t 30 --strict -- npm start
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./server/.env.docker
+
+networks:
+  appnetwork:
+    name: appnetwork
+    driver: bridge
+
+volumes:
+  dbdata:

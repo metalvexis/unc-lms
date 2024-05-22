@@ -1,0 +1,153 @@
+# Install this vscode plugin to test these API: humao.rest-client
+
+### Authenticate user
+POST http://localhost:3000/api/Auth/login
+content-type: application/json
+
+{
+  "username": "1034",
+  "password": "password!"
+}
+
+### Get a list of Program offering
+GET http://localhost:3000/api/Program
+Authorization: Basic 1034:password!
+
+### Create a Program offering
+PUT http://localhost:3000/api/Program
+Authorization: Basic 1034:password!
+content-type: application/json
+
+{
+  "program_code": "CSD1",
+  "program_name": "Computer Sciences Department",
+  "dept_id": 2
+}
+
+### Assign Program Head
+POST http://localhost:3000/api/Program/AssignProgramHead
+Authorization: Basic 1034:password!
+content-type: application/json
+
+{
+  "program_id": 5,
+  "faculty_id": 735
+}
+
+### Delete a Program offering
+DELETE http://localhost:3000/api/Program?id=129
+Authorization: Basic 1034:password!
+
+### Get PEO List
+GET http://localhost:3000/api/PEO
+Authorization: Basic 1034:password!
+
+### Post new PEO
+POST http://localhost:3000/api/PEO
+Authorization: Basic 1034:password!
+content-type: application/json
+
+{
+  "peo_desc": "Sample Program Educational Objective",
+  "seq_no": 1,
+  "program_code": "BSCS",
+  "program_id": 1
+}
+
+### Delete a Program offering
+DELETE http://localhost:3000/api/PEO?id=5
+Authorization: Basic 1034:password!
+
+
+### Get Program Outcome List
+GET http://localhost:3000/api/ProgramOutcome
+Authorization: Basic 1034:password!
+
+### Post new Program Outcome
+POST http://localhost:3000/api/ProgramOutcome
+Authorization: Basic 1034:password!
+content-type: application/json
+
+{
+  "po_desc": "This is a new Program Outcome Statement",
+  "seq_no": 1,
+  "program_code": "BSCS",
+  "program_id": 1
+}
+
+### Delete a Program Outcome
+DELETE http://localhost:3000/api/ProgramOutcome?id=2
+Authorization: Basic 1034:password!
+
+### Get Period List
+GET http://localhost:3000/api/Period
+Authorization: Basic 1034:password!
+
+### Post new Period
+POST http://localhost:3000/api/Period
+Authorization: Basic 1034:password!
+content-type: application/json
+
+{
+  "school_yr": "2024",
+  "sem": 1
+}
+
+### Delete Period
+DELETE http://localhost:3000/api/Period?id=2
+Authorization: Basic 1034:password!
+
+### GET PEO and PO alignment
+GET http://localhost:3000/api/Alignment
+Authorization: Basic 1034:password!
+
+### POST a new PEO and PO Alignment
+POST http://localhost:3000/api/Alignment
+Authorization: Basic 1034:password!
+content-type: application/json
+
+{
+  "po_id": 3,
+  "peo_id": 7
+}
+### Get Program Outcome List
+GET http://localhost:3000/api/ProgramOutcome
+Authorization: Basic 1034:password!
+
+### Post new Program Outcome
+POST http://localhost:3000/api/ProgramOutcome
+Authorization: Basic 1034:password!
+content-type: application/json
+
+{
+  "po_desc": "This is a new Program Outcome Statement",
+  "seq_no": 1,
+  "program_code": "BSCS",
+  "program_id": 1
+}
+
+### Delete a Program Outcome
+DELETE http://localhost:3000/api/ProgramOutcome?id=2
+Authorization: Basic 1034:password!
+
+### Get Period List
+GET http://localhost:3000/api/Period
+Authorization: Basic 1034:password!
+
+### Post new Period
+POST http://localhost:3000/api/Period
+Authorization: Basic 1034:password!
+content-type: application/json
+
+{
+  "school_yr": "2024",
+  "sem": 1
+}
+
+### Delete Period
+DELETE http://localhost:3000/api/Period?id=2
+Authorization: Basic 1034:password!
+
+### Get User with dept and period
+GET http://localhost:3000/api/User
+Authorization: Basic 1034:password!

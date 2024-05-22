@@ -1,0 +1,6 @@
+migrations
+seeders
+dist
+src/static
+
+*.d.ts
